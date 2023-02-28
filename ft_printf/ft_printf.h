@@ -25,6 +25,6 @@ int		print_int(int n);
 int		ft_printf(const char *ptr, ...);
 int		print_uint(unsigned int n);
 int		print_hex(unsigned int n, const char ptr);
-int		print_p(uintptr_t n);
+int		print_p(intptr_t n);
 
 #endif

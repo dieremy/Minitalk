@@ -49,7 +49,7 @@ int	ft_output(va_list v, const char ptr)
 	else if (ptr == 'p')
 	{
 		out += ft_putstr("0x");
-		out += print_p(va_arg(v, uintptr_t));
+		out += print_p(va_arg(v, intptr_t));
 	}
 	else if (ptr == 'u')
 		out += print_uint(va_arg(v, unsigned int));

@@ -73,7 +73,7 @@ int	print_hex(unsigned int n, const char ptr)
 	return (len);
 }
 
-int	print_p(uintptr_t n)
+int	print_p(intptr_t n)
 {
 	int	len;
 
