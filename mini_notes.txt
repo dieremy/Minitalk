@@ -6,10 +6,11 @@ sigaction() function allows the calling process to examine and/or specify the ac
 sig specifies the used signal.
 
 sigaction {
-               void     (*sa_handler)(int);
-               void     (*sa_sigaction)(int, siginfo_t *, void *);
-               sigset_t   sa_mask;
-               int        sa_flags;
+               void     (*sa_handler)(int);                         /* pointer to a signal-catching function */
+               int        sa_flags;                                 /* special flag to affect signal behavior */ 
+               sigset_t   sa_mask;                                  /* additional set of signals to be blocked
+                                                                       during execution of "sa_handler()" in question */
+               void     (*sa_sigaction)(int, siginfo_t *, void *);  /* pointer to "sa_handler()" in question */
                void     (*sa_restorer)(void);
            };
 
