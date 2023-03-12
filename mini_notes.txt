@@ -5,18 +5,15 @@ struct sigaction
 sigaction() function allows the calling process to examine and/or specify the action to be assigned to a specified signal.
 sig specifies the used signal.
 
-Member Type								Member Name										Description 
+sigaction {
+               void     (*sa_handler)(int);
+               void     (*sa_sigaction)(int, siginfo_t *, void *);
+               sigset_t   sa_mask;
+               int        sa_flags;
+               void     (*sa_restorer)(void);
+           };
 
-void(*) (int)							sa_handler							pointer to a signal-catching function
-
-sigset_t								sa_mask								additional set of signals to be blocked
-																			during execution of "sa_handler()" in question
-
-int										sa_flags							special flag to affect signal behavior
-
-void(*) (int, siginfo_t *, void*)		sa_sigaction						pointer to "sa_handler()" in question
-
-Occupied storage by sa_handler and sa_sigaction may overlap may overlap, an application cannot use it simultaneously.
+Occupied storage by sa_handler and sa_sigaction may overlap, an application cannot use it simultaneously.
 
 Argument act points to structure specifying the action to be associated with specified signal.
 The action previously associated with the signal is stored in the location pointed to by the argument oact.
