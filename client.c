@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parrot <parrot@student.42.fr>              +#+  +:+       +#+        */
+/*   By: robegarc <robegarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/27 22:13:10 by parrot            #+#    #+#             */
-/*   Updated: 2023/02/27 22:45:49 by parrot           ###   ########.fr       */
+/*   Created: 2023/03/13 12:02:50 by robegarc          #+#    #+#             */
+/*   Updated: 2023/03/13 15:19:47 by robegarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	send_char(char c, int bit_no, int pid)
 		else
 			kill(pid, SIGUSR2);
 		bit_no++;
-		usleep(1200);	
+		usleep(1200);
 	}
 }
 
@@ -47,20 +47,20 @@ void	sig_sent(int i)
 
 int	main(int ac, char **av)
 {
-    pid_t	c;
-    
-    c = 0;
-    if (ac == 3)
-    {
-        c = ft_atoi(av[1]);
-        signal(SIGUSR1, &sig_sent);
-        check_bit(c, av[2]);
-        send_char('\n', 0, c);
-        send_char('\0', 0, c);
-    }
-    else
-    {
-        ft_printf("ERROR\nUsage: ./client PID_SERVER MESSAGE\n");
-        exit(0);
-    }
+	pid_t	c;
+
+	c = 0;
+	if (ac == 3)
+	{
+		c = ft_atoi(av[1]);
+		signal(SIGUSR1, &sig_sent);
+		check_bit(c, av[2]);
+		send_char('\n', 0, c);
+		send_char('\0', 0, c);
+	}
+	else
+	{
+		ft_printf("ERROR\nUsage: ./client PID_SERVER MESSAGE\n");
+		exit(0);
+	}
 }

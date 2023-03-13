@@ -3,20 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: parrot <parrot@student.42.fr>              +#+  +:+       +#+         #
+#    By: robegarc <robegarc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/27 11:57:20 by robegarc          #+#    #+#              #
-#    Updated: 2023/02/27 22:43:57 by parrot           ###   ########.fr        #
+#    Updated: 2023/03/13 12:01:57 by robegarc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME_S = server
 SRC_S = server.c
-OBJ_S = $(SRC_S.o=.c)
+OBJ_S = $(SRC_S.O=.c)
 
 NAME_C = client
 SRC_C = client.c
-OBJ_C = $(SRC_C.o=.c)
+OBJ_C = $(SRC_C.O=.c)
 
 CC = gcc -Wall -Wextra -Werror
 
