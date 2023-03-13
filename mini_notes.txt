@@ -37,7 +37,7 @@ process2 will check in shared memory and take note of generated info by process1
     at the same time consumer will check elements' availability.
     if no element is available consumer waits; if elements are available consumer consume them.
 
-- message passing
+- MESSAGE PASSING
 start exchanging mex using basic primitives
 send(mex, destination) receive(mex, host)
 
